@@ -21,7 +21,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.marsrealestate.network.MarsApi
+import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 
 /**
  * The [ViewModel] that is attached to the [OverviewFragment].
@@ -48,6 +50,13 @@ class OverviewViewModel : ViewModel() {
     private fun getMarsRealEstateProperties() {
         MarsApi.retrofitService.getProperties().enqueue(
                 object: Callback<String> {
+                    override fun onResponse(call: Call<String>, response: Response<String>) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onFailure(call: Call<String>, t: Throwable) {
+                        TODO("Not yet implemented")
+                    }
                 })
     }
 }
